@@ -3,12 +3,16 @@ package core; /**
  */
 
 import figure.Figure;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
 import utils.Display;
 import utils.GenerateFigure;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import static utils.Display.getContent;
 
@@ -33,6 +37,23 @@ public class Core {
     }
 
     public void go() {
+        new Thread((new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    FileInputStream file = new FileInputStream("music/old.mp3");
+                    Player player = new Player(file);
+                    player.play();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (JavaLayerException e) {
+                    e.printStackTrace();
+                }
+            }
+        })).start();
+
+
         setTitle(WIDTH, HEIGHT, LENGTH);
         graphics = Display.getGraphics();
         content = getContent();
@@ -67,7 +88,7 @@ public class Core {
                 if (isFigure) {
                     figureMy.moveDown();
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
