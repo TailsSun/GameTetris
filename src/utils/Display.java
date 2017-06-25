@@ -14,7 +14,7 @@ import static com.sun.java.accessibility.util.AWTEventMonitor.addKeyListener;
 /**
  * Created by DNS on 10.04.2017.
  */
-public class Displey {
+public class Display {
     private static boolean			created	= false;
     private static JFrame			window;
     private static Canvas			content;
@@ -70,6 +70,5 @@ public class Displey {
         return (Graphics2D) bufferGraphics;
     }
     public static Canvas getContent (){ return content; }
-    public static void addKeyboard(Keyboard keyboard) { window.add(keyboard);
-    }
+
 }

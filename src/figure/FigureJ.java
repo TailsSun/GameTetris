@@ -12,6 +12,9 @@ public class FigureJ extends Figure{
     private int [][] square = {{4, 0}, {4, 1}, {4, 2}, {3, 2}};// моя фигура;
     private boolean vertikal = true;
 
+    public boolean getVertikal() {
+        return vertikal;
+    }
 
     @Override
     public int[][] getSquare() {
@@ -21,6 +24,8 @@ public class FigureJ extends Figure{
 
     @Override
     public boolean isTouchGround(int[][] mapSquare) {
+        square = getSquare();
+        vertikal = getVertikal();
         if(vertikal){
             if (square[3][1] == HEIGHT - 1
                     || mapSquare[square[3][0]][square[3][1] + 1] == WALL

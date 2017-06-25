@@ -1,4 +1,4 @@
-package core;
+package utils;
 
 import figure.*;
 
@@ -14,12 +14,10 @@ public class GenerateFigure {
         int tmp = rnd.nextInt(6);
         if (tmp == 0) return new FigureI();
         if (tmp == 1) return new FigureJ();
-//        if (tmp == 2) return new FigureL();
+        if (tmp == 2) return new FigureL();
         if (tmp == 3) return new FigureO();
 //        if (tmp == 4) return new FigureS();
 //        if (tmp == 5) return new FigureT();
-        return  new FigureO();//todo
+        return  new FigureL();//todo
     }
-
-
 }
