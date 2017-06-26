@@ -88,7 +88,7 @@ public class Core {
                 if (isFigure) {
                     figureMy.moveDown();
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(200);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

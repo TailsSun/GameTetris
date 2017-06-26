@@ -20,7 +20,41 @@ public class Well {
 
     public static void getFigure(Figure figure) {
         figure.writeToWell(mapSquare);
+        while (isFullRow());
 
+    }
+
+    private static boolean isFullRow(){
+        int sum = 0;
+        for (int y = 0; y < HEIGHT ; y++) {
+            for (int x = 0; x < WIDTH; x++) {
+                sum = sum + mapSquare[x][y];
+                if (sum == WIDTH) {
+                    int numberLineIsFull = y;
+                    mapSquare = rebuildMapSquare(numberLineIsFull);
+                    return true;
+                }
+
+            }
+            sum = 0;
+        }
+        return false;
+    }
+
+    private static int[][] rebuildMapSquare(int numberLineIsFull) {
+        int[][] clone = new int[WIDTH][HEIGHT];
+        int lineShift = 1;
+
+        for (int y = 0; y < HEIGHT ; y++) {
+            if (y != numberLineIsFull) {
+                for (int x = 0; x < WIDTH; x++) {
+                    clone[x][y + lineShift] = mapSquare[x][y];
+
+                }
+
+            } else lineShift = 0;
+        }
+        return clone;
     }
 
     public static void draw(Graphics2D graf) {
