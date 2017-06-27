@@ -16,7 +16,7 @@ public class GenerateFigure {
         if (tmp == 1) return new FigureJ();
         if (tmp == 2) return new FigureL();
         if (tmp == 3) return new FigureO();
-//        if (tmp == 4) return new FigureS();
-        return  new FigureL();//todo
+        if (tmp == 4) return new FigureZ();
+        return  new FigureZ();//todo
     }
 }

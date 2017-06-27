@@ -9,7 +9,7 @@ import static core.Well.*;
 public class FigureI extends Figure{
 
     private int [][] square = {{4, 0}, {4, 1}, {4, 2}, {4, 3}};// моя фигура;
-    private boolean vertikal = true;
+    private boolean vertical = true;
 
 
     @Override
@@ -20,7 +20,7 @@ public class FigureI extends Figure{
 
     @Override
     public boolean isTouchGround(int[][] mapSquare) {
-        if(vertikal){
+        if(vertical){
             if (square[3][1] == HEIGHT - 1 || mapSquare[square[3][0]][square[3][1] + 1] == WALL)
                 return true;
             return false;
@@ -34,7 +34,7 @@ public class FigureI extends Figure{
 
     @Override
     public void rotate() {
-        if (vertikal){
+        if (vertical){
             if (square[0][0] > 1 && square[0][0] < WIDTH){
                 int tmpX = square[2][0]; // 4
                 int tmpY = square[2][1]; // 2
@@ -51,7 +51,7 @@ public class FigureI extends Figure{
                     square[3][0] = tmpX + 1;
                     square[3][1] = tmpY;
 
-                    vertikal = false;
+                    vertical = false;
                 }
             }
         }else {
@@ -70,7 +70,7 @@ public class FigureI extends Figure{
                     square[3][0] = tmpX;
                     square[3][1] = tpmY + 1;
 
-                    vertikal = true;
+                    vertical = true;
                 }
             }
         }

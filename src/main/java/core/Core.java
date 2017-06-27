@@ -85,7 +85,7 @@ public class Core {
 
                 }
                 if (isFigure) {
-                    figureMy.moveDown();
+                   figureMy.moveDown();
                     try {
                         Thread.sleep(300);
                     } catch (InterruptedException e) {
