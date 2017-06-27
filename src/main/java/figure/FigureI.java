@@ -38,7 +38,8 @@ public class FigureI extends Figure{
             if (square[0][0] > 1 && square[0][0] < WIDTH){
                 int tmpX = square[2][0]; // 4
                 int tmpY = square[2][1]; // 2
-                if (mapSquare [tmpX - 2][tmpY] != WALL &&
+                if (tmpX != WIDTH - 1 &&
+                        mapSquare [tmpX - 2][tmpY] != WALL &&
                         mapSquare [tmpX - 1][tmpY] != WALL &&
                         mapSquare [tmpX +1][tmpY] != WALL){
                     square[0][0] = tmpX - 2;

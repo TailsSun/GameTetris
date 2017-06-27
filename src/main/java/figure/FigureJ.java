@@ -80,7 +80,7 @@ public class FigureJ extends Figure {
         if (slopeAngle == 180) {
             int tmpX = square[1][0];
             int tpmY = square[1][1];
-            if (tmpX != 0 &&
+            if (tmpX != 0 && tmpX != WIDTH - 1 &&
                     mapSquare[tmpX - 1][tpmY] != WALL &&
                     mapSquare[tmpX + 1][tpmY] != WALL &&
                     mapSquare[tmpX + 1][tpmY + 1] != WALL) {

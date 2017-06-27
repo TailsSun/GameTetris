@@ -11,13 +11,12 @@ import java.util.Random;
 public class GenerateFigure {
     public static Figure generate(){
         Random rnd = new Random();
-//        int tmp = rnd.nextInt(6);
-//        if (tmp == 0) return new FigureI();
-//        if (tmp == 1) return new FigureJ();
-//        if (tmp == 2) return new FigureL();
-//        if (tmp == 3) return new FigureO();
+        int tmp = rnd.nextInt(5);
+        if (tmp == 0) return new FigureI();
+        if (tmp == 1) return new FigureJ();
+        if (tmp == 2) return new FigureL();
+        if (tmp == 3) return new FigureO();
 //        if (tmp == 4) return new FigureS();
-//        if (tmp == 5) return new FigureT();
         return  new FigureL();//todo
     }
 }

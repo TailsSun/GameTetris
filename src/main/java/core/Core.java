@@ -24,11 +24,9 @@ public class Core {
     public static final int LEFT = 37;
     public static final int WALL = 1;
 
-    private static boolean title;
     private static boolean isFigure;
     private static final String fileMusic = "music/old.mp3";
     public static final int UP = 38;
-    public static final int DOWN = 40;
     private Well well;
     private Figure figureMy;
     private Graphics2D graphics;
@@ -63,7 +61,6 @@ public class Core {
         content.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 if (isFigure) {
-//                    if (e.getKeyCode() == DOWN) figure.drop();
                     if (e.getKeyCode() == UP) figureMy.rotate();
                     if (e.getKeyCode() == LEFT || e.getKeyCode() == RIGHT) figureMy.move(e.getKeyCode());
                     draw();
@@ -88,9 +85,9 @@ public class Core {
 
                 }
                 if (isFigure) {
-//                    figureMy.moveDown();
+                    figureMy.moveDown();
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(300);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
