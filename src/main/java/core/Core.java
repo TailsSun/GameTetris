@@ -39,7 +39,8 @@ public class Core {
     }
 
     public void go() {
-        new Thread((new Runnable() {
+        Thread tread = new Thread((new Runnable() {
+
             @Override
             public void run() {
                 try {
@@ -53,7 +54,9 @@ public class Core {
                     e.printStackTrace();
                 }
             }
-        })).start();
+        }));
+        tread.setDaemon(true);
+        tread.start();
 
 
         setTitle(WIDTH, HEIGHT, LENGTH);
@@ -97,6 +100,8 @@ public class Core {
                 }
             }
         }
+        System.out.println("конееец");
+        Display.destroy();
 
     }
 

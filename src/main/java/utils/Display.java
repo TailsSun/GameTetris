@@ -55,7 +55,14 @@ public class Display {
 
         created = true;
     }
+    public static void destroy() {
 
+        if (!created)
+            return;
+
+        window.dispose();//убиваем окно
+
+    }
     public static void clear() {
         Arrays.fill(bufferData, clearColor);
     }
