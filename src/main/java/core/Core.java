@@ -23,14 +23,16 @@ public class Core {
     public static final int RIGHT = 39;
     public static final int LEFT = 37;
     public static final int WALL = 1;
+    public static final int UP = 38;
 
     private static boolean isFigure;
     private static final String fileMusic = "music/old.mp3";
-    public static final int UP = 38;
+    private static boolean gameOver;
     private Well well;
     private Figure figureMy;
     private Graphics2D graphics;
     private Canvas content;
+
 
     private static void setTitle(int width, int high, int lenght) {
         Display.create(width * lenght, high * lenght, "Tetris", 0xff000000, 3);
@@ -68,9 +70,10 @@ public class Core {
             }
         });
 
-        while (true) { // todo реализовать конец игры
+        while (!gameOver) { // todo реализовать конец игры
             if (!isFigure) {
                 figureMy = GenerateFigure.generate();
+                gameOver = figureMy.checkTouchSquare(Well.mapSquare);
                 isFigure = true;
             }
             draw();
@@ -94,6 +97,7 @@ public class Core {
                 }
             }
         }
+
     }
 
     private void draw() {
